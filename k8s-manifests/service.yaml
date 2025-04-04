@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: delivery-project
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: delivery-project
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8083
