@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delivery-project
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delivery-project
+  template:
+    metadata:
+      labels:
+        app: delivery-project
+    spec:
+      containers:
+      - name: delivery-project
+        image: phegley/delivery:latest
+        ports:
+        - containerPort: 8083
